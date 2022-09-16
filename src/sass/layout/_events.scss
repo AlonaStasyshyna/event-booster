@@ -1,0 +1,128 @@
+@import '../utils/vars';
+
+.events {
+    margin: 40px auto;
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        column-gap: 20px;
+        row-gap: 32px;
+    }
+
+    &__poster {
+        position: relative;
+        margin-bottom: 8px;
+        padding-top: 9px;
+        padding-right: 10px;
+
+        &--img {
+            border-radius: 50px 0px;
+            position: relative;
+            z-index: 1;
+        }
+
+        &--decor {
+            border: 1px solid rgba(220, 86, 197, 0.3);
+            border-radius: 50px 0px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 102px;
+            height: 95px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+        color: $secondary-text-color;
+
+        &--title {
+            font-size: 14px;
+            line-height: calc(17 / 14);
+            color: $accent-color;
+        }
+
+        &--date {
+            font-size: 14px;
+            line-height: calc(17 / 14);
+        }
+
+        &--place {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: calc(15 / 12);
+        }
+
+        &--icon {
+            width: 6px;
+            height: 9px;
+            margin-right: 3px;
+        }
+    }
+}
+
+
+@media screen and(min-width: 768px) {
+    .events {
+        &__cards {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        &__poster {
+            padding-top: 10px;
+            padding-right: 11px;
+
+            &--decor {
+                width: 120px;
+                height: 112px;
+            }
+        }   
+
+        &__info {
+            gap: 8px;
+
+            &--title,
+            &--date {
+                font-size: 16px;
+                line-height: calc(20 / 16);
+            }
+
+            &--place {
+                font-size: 14px;
+                line-height: calc(17 / 14);
+            }
+
+            &--icon {
+                width: 7.55px;
+                height: 10px;
+            }
+        }
+    }
+}
+
+@media screen and(min-width: 1280px) {
+    .events {
+        &__cards {
+            row-gap: 40px;
+        }
+
+        &__poster {
+            padding-top: 19px;
+            padding-right: 21px;
+
+            &--decor {
+                width: 227px;
+                height: 212px;
+            }
+        }
+    }
+}
