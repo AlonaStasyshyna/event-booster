@@ -1,19 +1,18 @@
 .pagination__wripper {
   text-align: center;
 }
+
 .pagination__button {
   width: 30px;
   height: 30px;
-  font-size: 14px;
-  line-height: 1.21;
   color: $secondary-text-color;
   background-color: transparent;
 
   border: none;
 
-  @media screen and(min-width: 768px) {
-    font-size: 16px;
-    line-height: 1.25;
+  @include mq(mob-only) {
+    font-size: 14px;
+    line-height: 1.21;
   }
 }
 
