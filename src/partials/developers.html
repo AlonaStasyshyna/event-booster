@@ -1,8 +1,10 @@
-<div class="backdrop">
+<div class="backdrop is-hidden" data-modal>
   <div class="modal-dev">
     <div class="modal-dev__content">
-      <button class="btn-modal">
-        <img src="./images/close.svg" alt="close-button" />
+      <button class="btn-modal" data-modal-close>
+        <svg class="btn-close">
+          <use href="./images/sprite.svg#close"></use>
+        </svg>
       </button>
       <h2 class="modal-dev__title">D.Then - Developer team</h2>
       <ul class="modal-dev__list list">
