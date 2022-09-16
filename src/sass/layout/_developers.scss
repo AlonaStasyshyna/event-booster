@@ -1,0 +1,170 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: #dc56c55c;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal-dev {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal-dev {
+  position: absolute;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  padding: 70px 40px;
+  border-radius: 250px 0;
+  background-color: #ffffff;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-dev__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-modal {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  padding: 6px 6px 5px 5px;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+}
+
+.btn-close {
+  width: 25px;
+  height: 25px;
+}
+
+.modal-dev__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.modal-dev__title {
+  color: $primary-bg-color;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.modal-dev__item {
+  width: calc((100% - 30px) / 2);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid $accent-color;
+  border-radius: 100px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 5px 10px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    box-shadow: 2px 2px 10px 2px rgba(220, 86, 197, 0.25);
+    transform: scale(1.05);
+  }
+}
+
+.dev-avatar {
+  width: 150px;
+  height: 150px;
+}
+
+.modal-dev__name-title {
+  font-size: 24px;
+  line-height: calc(29 / 24);
+  font-weight: 600;
+  color: $accent-color;
+  padding-bottom: 5px;
+}
+
+.modal-dev__text {
+  font-size: 18px;
+  line-height: calc(22 / 18);
+  color: $primary-bg-color;
+  margin-bottom: 15px;
+}
+
+.git-self-link {
+  display: block;
+  width: 120px;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #4c00fe;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #4c00fe;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: #ffffff;
+    color: #4c00fe;
+    box-shadow: 2px 2px 10px 2px rgba(76, 0, 254, 0.25);
+    transform: scale(1.05);
+  }
+}
+
+.git-self {
+  width: 100%;
+}
+
+.btn-github {
+  display: block;
+  text-align: center;
+  width: 150px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #4c00fe;
+  color: #4c00fe;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: #4c00fe;
+    color: #ffffff;
+    transform: scale(1.2);
+    box-shadow: 2px 2px 10px 2px rgba(76, 0, 254, 0.25);
+  }
+}
