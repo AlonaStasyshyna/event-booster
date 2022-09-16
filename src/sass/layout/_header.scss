@@ -1,6 +1,6 @@
 .header-field {
   position: relative;
-  padding-top: 80px;
+  padding-top: 20px;
   background-image: linear-gradient(
       180deg,
       rgba(13, 13, 13, 0.19) 0%,
@@ -66,13 +66,14 @@
     }
   }
 }
-
-.logo__icon {
+.header-field__icon-background {
+  display: block;
   position: absolute;
-  width: 214px;
-  height: 180px;
-  top: -90px;
-  left: -107px;
+  top: -130px;
+  left: -70px;
+  width: 180px;
+  height: 213.97px;
+
   background-image: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.2),
@@ -83,19 +84,61 @@
       rgba(196, 196, 196, 0.03) 10.75%,
       rgba(196, 196, 196, 0) 92.33%
     );
+  backdrop-filter: blur(15px);
   border-radius: 50%;
 
   @media screen and (min-width: 768px) {
-    top: -151px;
-    left: -179.5px;
     width: 359px;
     height: 302px;
+    left: -180px;
+    top: -151px;
   }
   @media screen and (min-width: 1280px) {
-    top: -193px;
-    left: -229px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),
+      linear-gradient(
+        136.07deg,
+        rgba(196, 196, 196, 0.03) 10.75%,
+        rgba(196, 196, 196, 0) 92.33%
+      );
     width: 458px;
     height: 386px;
+    left: -229px;
+    top: -193px;
+  }
+}
+
+.logo {
+  display: inline-block;
+  z-index: 5;
+  position: relative;
+}
+
+.logo__icon {
+  @media screen and (min-width: 0) and (max-width: 1279px) {
+    width: 60px;
+    height: 25px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 100px;
+    height: 29px;
+  }
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+
+  &_big {
+    @media screen and (max-width: 1279px) {
+      display: none;
+    }
+    @media screen and (min-width: 1280px) {
+      width: 137px;
+      height: 71px;
+      display: block;
+    }
   }
 }
 
@@ -103,8 +146,8 @@
   color: $accent-color;
 
   margin: 0 auto;
-
-  max-width: 280px;
+  padding-top: 30px;
+  max-width: 275px;
   font-weight: 900;
   font-size: 18px;
   line-height: 1.22;
@@ -120,5 +163,7 @@
     font-size: 50px;
     line-height: 1.22;
     max-width: 608px;
+    padding-top: 0;
+    margin-top: -75px;
   }
 }
