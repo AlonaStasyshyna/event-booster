@@ -1,8 +1,26 @@
 .footer__copyright {
   text-align: center;
+
+  @include mq(mob-only) {
+    font-size: 14px;
+    line-height: calc(17 / 14);
+  }
 }
 
 .footer__heart-symbol {
   font-size: 20px;
   color: #ff262e;
+}
+
+.footer__developers-btn {
+  padding: 0;
+  border: none;
+
+  line-height: calc(20 / 16);
+  color: inherit;
+  background-color: transparent;
+
+  @include mq(mob-only) {
+    line-height: calc(17 / 14);
+  }
 }
