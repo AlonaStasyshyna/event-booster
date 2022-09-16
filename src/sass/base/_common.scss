@@ -7,6 +7,10 @@ body {
   background-color: $primary-bg-color;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   max-width: 480px;
   margin-left: auto;
