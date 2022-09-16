@@ -1,9 +1,10 @@
 .search-form__container {
-  @media screen and(min-width: 768px) {
+  @include mq(tab) {
     display: flex;
     justify-content: space-between;
   }
-  @media screen and(min-width: 1280px) {
+
+  @include mq(desk) {
     justify-content: center;
   }
 }
@@ -16,21 +17,22 @@
   position: relative;
 
   font-weight: 400;
-  @media screen and(min-width: 768px) {
+
+  @include mq(tab) {
     margin-left: 0px;
     margin-right: 0px;
 
     width: 336px;
   }
 
-  @media screen and(min-width: 1280px) {
+  @include mq(desk) {
     width: 280px;
-    // margin-right: 32px;
   }
 
   &:first-child {
     margin-bottom: 24px;
-    @media screen and(min-width: 768px) {
+
+    @include mq(tab) {
       margin-bottom: 0px;
       margin-right: 32px;
     }
