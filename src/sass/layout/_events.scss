@@ -28,8 +28,8 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 102px;
-            height: 95px;
+            width: 75%;
+            height: 60%;
         }
     }
 
@@ -80,11 +80,6 @@
         &__poster {
             padding-top: 10px;
             padding-right: 11px;
-
-            &--decor {
-                width: 120px;
-                height: 112px;
-            }
         }   
 
         &__info {
@@ -118,11 +113,6 @@
         &__poster {
             padding-top: 19px;
             padding-right: 21px;
-
-            &--decor {
-                width: 227px;
-                height: 212px;
-            }
         }
     }
 }
