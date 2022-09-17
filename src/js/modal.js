@@ -1,13 +1,14 @@
-const openModal = document.querySelector('.open-modal');
-const closeModal = document.querySelector('.close-modal');
-const modal = document.querySelector('[modal-info]');
+export default (() => {
+  const refs = {
+    openModalBtn: document.querySelector('[info-modal-open]'),
+    closeModalBtn: document.querySelector('[info-modal-close]'),
+    modal: document.querySelector('[info-modal]'),
+  };
 
-const openModalWindow = () => {
-  modal.style.display = 'flex';
-};
-openModal.addEventListener('click', openModalWindow);
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
 
-const closeModalWindow = () => {
-  modal.style.display = 'none';
-};
-closeModal.addEventListener('click', closeModalWindow);
+  function toggleModal() {
+    refs.modal.classList.toggle('is-hidden');
+  }
+})();

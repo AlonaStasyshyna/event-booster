@@ -4,19 +4,15 @@
     align-items: center;
 }
 
-.backdrop-info {
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(1.5px);
-    background: rgba(32, 13, 29, 0.6);
-}
-
-.close {
+.close{
     margin-bottom: 30px;
     margin-left: auto;
     margin-top: -45px;
     fill: #4C00FE;
+    padding: 5px;
+    background-color: transparent;
     border-style: none;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
