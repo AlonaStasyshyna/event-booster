@@ -1,70 +1,10 @@
 .header-field {
   position: relative;
   padding-top: 20px;
-  // background-image: linear-gradient(
-  //     180deg,
-  //     rgba(13, 13, 13, 0.19) 0%,
-  //     rgba(14, 14, 14, 0.8) 100%
-  //   ),
-  //   url('../images/header/header-mobile.png');
-  // background-color: rgba(11, 11, 11, 0.5);
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-size: cover;
-  // height: 364px;
-
-  // @media screen and (min-device-pixel-ratio: 2),
-  //   screen and (min-resolution: 192dpi),
-  //   screen and (min-resolution: 2dppx) {
-  //   background-image: linear-gradient(
-  //       180deg,
-  //       rgba(13, 13, 13, 0.19) 0%,
-  //       rgba(14, 14, 14, 0.8) 100%
-  //     ),
-  //     url('../images/header/header-mobile@2x.png');
-  // }
 
   @media screen and (min-width: 768px) {
     padding-top: 40px;
-    // background-image: linear-gradient(
-    //     180deg,
-    //     rgba(13, 13, 13, 0.19) 0%,
-    //     rgba(14, 14, 14, 0.8) 100%
-    //   ),
-    //   url('../images/header/header-tablet.png');
-
-    // @media screen and (min-device-pixel-ratio: 2),
-    //   screen and (min-resolution: 192dpi),
-    //   screen and (min-resolution: 2dppx) {
-    //   background-image: linear-gradient(
-    //       180deg,
-    //       rgba(13, 13, 13, 0.19) 0%,
-    //       rgba(14, 14, 14, 0.8) 100%
-    //     ),
-    //     url('../images/header/header-tablet@2x.png');
-    // }
   }
-
-  // @media screen and (min-width: 1280px) {
-  //   height: 446px;
-  //   background-image: linear-gradient(
-  //       180deg,
-  //       rgba(13, 13, 13, 0.19) 0%,
-  //       rgba(14, 14, 14, 0.8) 100%
-  //     ),
-  //     url('../images/header/header-desktop.png');
-
-  //   @media screen and (min-device-pixel-ratio: 2),
-  //     screen and (min-resolution: 192dpi),
-  //     screen and (min-resolution: 2dppx) {
-  //     background-image: linear-gradient(
-  //         180deg,
-  //         rgba(13, 13, 13, 0.19) 0%,
-  //         rgba(14, 14, 14, 0.8) 100%
-  //       ),
-  //       url('../images/header/header-desktop@2x.png');
-  //   }
-  // }
 }
 .header-field__icon-background {
   display: block;

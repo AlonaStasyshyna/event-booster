@@ -5,24 +5,52 @@ body {
   color: $primary-text-color;
 
   background-color: $primary-bg-color;
+  background-image: url('../images/background/noise-body-mobile@1x.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include mq(retina) {
+    background-image: url('../images/background/noise-body-mobile@2x.png');
+  }
+
+  @include mq(tab) {
+    background-image: url('../images/background/background-figures_tab.png'),
+      url('../images/background/noise-body-tablet@1x.png');
+
+    @include mq(retina) {
+      background-image: url('../images/background/background-figures_tab@2x.png'),
+        url('../images/background/noise-body-tablet@2x.png');
+    }
+  }
+
+  @include mq(desk) {
+    background-image: url('../images/background/background-figures_desk.png'),
+      url('../images/background/noise-body-desktop@1x.png');
+
+    @include mq(retina) {
+      background-image: url('../images/background/background-figures_desk@2x.png'),
+        url('../images/background/noise-body-desktop@2x.png');
+    }
+  }
 
   &::before {
     content: '';
     position: absolute;
-    z-index: -9;
+    z-index: -10;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
 
     display: block;
-    min-width: 320px;
+    width: 320px;
     height: 364px;
 
     background-image: linear-gradient(
         rgba(11, 11, 11, 0.5),
         rgba(11, 11, 11, 0.5)
       ),
-      url('../images/hero/hero-img_mob.jpg');
+      url('../images/background/background-img_mob.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -32,12 +60,12 @@ body {
           rgba(11, 11, 11, 0.5),
           rgba(11, 11, 11, 0.5)
         ),
-        url('../images/hero/hero-img_mob@2x.jpg');
+        url('../images/background/background-img_mob@2x.jpg');
     }
 
-    @include mq(mob-only) {
-      width: 100%;
-    }
+    // @include mq(mob-only) {
+    //   width: 100%;
+    // }
 
     @include mq(tab) {
       width: 768px;
@@ -46,14 +74,14 @@ body {
           rgba(11, 11, 11, 0.5),
           rgba(11, 11, 11, 0.5)
         ),
-        url('../images/hero/hero-img_tab.jpg');
+        url('../images/background/background-img_tab.jpg');
 
       @include mq(retina) {
         background-image: linear-gradient(
             rgba(11, 11, 11, 0.5),
             rgba(11, 11, 11, 0.5)
           ),
-          url('../images/hero/hero-img_tab@2x.jpg');
+          url('../images/background/background-img_tab@2x.jpg');
       }
     }
 
@@ -65,14 +93,14 @@ body {
           rgba(11, 11, 11, 0.5),
           rgba(11, 11, 11, 0.5)
         ),
-        url('../images/hero/hero-img_desk.jpg');
+        url('../images/background/background-img_desk.jpg');
 
       @include mq(retina) {
         background-image: linear-gradient(
             rgba(11, 11, 11, 0.5),
             rgba(11, 11, 11, 0.5)
           ),
-          url('../images/hero/hero-img_desk@2x.jpg');
+          url('../images/background/background-img_desk@2x.jpg');
       }
     }
   }
@@ -80,62 +108,7 @@ body {
   &::after {
     content: '';
     position: absolute;
-    z-index: -10;
-    top: 364px;
-    left: 50%;
-    transform: translate(-50%, 0);
-
-    display: block;
-    min-width: 320px;
-    min-height: 1341px;
-
-    background-image: url('../images/noise-body/noise-body-mobile@1x.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    @include mq(retina) {
-      background-image: url('../images/noise-body/noise-body-mobile@2x.png');
-    }
-
-    @include mq(mob-only) {
-      width: 100%;
-      height: 100%;
-    }
-
-    @include mq(tab) {
-      width: 768px;
-      height: 100%;
-
-      background-image: url('../images/noise-body/noise-body-tablet@1x.png');
-
-      @include mq(retina) {
-        background-image: url('../images/noise-body/noise-body-tablet@2x.png');
-      }
-    }
-
-    @include mq(desk) {
-      width: 1280px;
-      height: 100%;
-
-      background-image: url('../images/noise-body/noise-body-desktop@1x.png');
-
-      @include mq(retina) {
-        background-image: url('../images/noise-body/noise-body-desktop@2x.png');
-      }
-    }
-  }
-}
-
-button {
-  cursor: pointer;
-}
-
-main {
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -8;
+    z-index: -9;
     top: 262px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -167,6 +140,10 @@ main {
       );
     }
   }
+}
+
+button {
+  cursor: pointer;
 }
 
 .container {
