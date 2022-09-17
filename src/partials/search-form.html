@@ -16,13 +16,11 @@
     </div>
 
     <div class="search-form__wripper">
-      <input
-        class="search-form__input"
-        type="text"
-        name="country"
-        id="country"
-        placeholder="Choose country"
-      />
+      <select class="search-form__input js-countries" name="country">
+        <option value="US">Choose country</option>
+        <option value="AT">Austria</option>
+        <option value="DE">Germany</option>
+      </select>
       <svg class="search-form__icon" width="15" height="10">
         <use class="icon-event-form" href="./images/sprite.svg#dropdown"></use>
       </svg>
