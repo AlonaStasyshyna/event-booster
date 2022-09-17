@@ -2,7 +2,6 @@ import { COUNTRIES_LIST } from './modules/countriesList';
 import { countriesListMurkup } from './templates/countriesListMurkup';
 import { getEvents } from './modules/getAPI';
 import { createEventCard } from './createEventCard';
-// --------------------------------------------
 const eventsGallery = document.querySelector('.events__cards');
 const refSearchEventsInputs = document.querySelector('.js-search-form');
 const refSearchFormInput = document.querySelector('.js-countries');
@@ -38,3 +37,15 @@ function onSearchEventsInput(e) {
     events.forEach(e => eventsGallery.innerHTML += createEventCard(e));
   });
 };
+import { getEvents } from './modules/getAPI';
+// --------------------------------------------
+const refSeachEventsInputs = document.querySelector('.js-search-form');
+console.dir(refSeachEventsInputs);
+
+refSeachEventsInputs.addEventListener('input', onSeachEventsInput);
+
+getEvents();
+
+function onSeachEventsInput(e) {
+  console.log(e.target);
+}

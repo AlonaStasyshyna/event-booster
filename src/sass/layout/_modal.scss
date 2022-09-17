@@ -1,0 +1,248 @@
+.modal-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close{
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-top: -45px;
+    fill: #4C00FE;
+    padding: 5px;
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .close {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .close svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 21px 100px 16px;
+    border-radius: 150px 0px;
+    background-color: #FFF2FD;
+
+
+}
+
+@media screen and (min-width: 768px) {
+    .modal {
+        padding: 32px 49px 40px 87px;
+        border-radius: 300px 0px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .modal {
+        padding: 54px 74px 40px 74px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .modal-img {
+        display: flex;
+        width: 249px;
+        height: 425px;
+        object-fit: cover;
+
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .modal-img {
+        display: flex;
+        width: 427px;
+        height: 630px;
+
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .modal-img {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .info-modal {
+        display: flex;
+        text-align: start;
+    }
+}
+
+
+.elipse-img {
+    width: 102px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .elipse-img {
+        width: 70px;
+        margin-bottom: 40px;
+
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .elipse-img {
+        width: 132px;
+    }
+}
+
+.info-list-element {
+    padding-bottom: 16px;
+}
+
+@media screen and (min-width: 1280px) {
+    .info-list-element {
+        padding-bottom: 20px;
+    }
+}
+
+.info-list {
+    font-family: 'Montserrat';
+    line-height: 1.2;
+}
+
+@media screen and (min-width: 768px) {
+    .info-list {
+        margin-left: 32px;
+        max-width: 287px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .info-list {
+
+        max-width: 427px;
+    }
+}
+
+.info-title {
+    font-size: 20px;
+    color: $accent-color;
+    padding-bottom: 5px;
+}
+
+@media screen and (min-width: 1280px) {
+    .info-title {
+        font-size: 24px;
+        padding-bottom: 7px;
+    }
+}
+
+.info-text {
+    font-size: 16px;
+    color: $primary-bg-color;
+}
+
+@media screen and (min-width: 1280px) {
+    .info-text {
+        font-size: 18px;
+    }
+}
+
+.padding {
+    padding-bottom: 3px;
+}
+
+@media screen and (min-width: 1280px) {
+    .padding {
+        padding-bottom: 5px;
+    }
+}
+
+.tickets {
+    padding-bottom: 8px;
+}
+
+@media screen and (min-width: 768px) {
+    .tickets {
+        padding-bottom: 5px;
+    }
+}
+
+.scan {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .scan {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.bar-code {
+    margin-right: 13px;
+}
+
+.buy-tickets-btn {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 9px 19px 11px 19px;
+    font-weight: 500;
+    font-size: 16px;
+    color: $secondary-text-color;
+    background-color: #4C00FE;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1280px) {
+    .buy-tickets-btn {
+        margin-top: 20px;
+        margin-bottom: 32px;
+    }
+}
+
+.info-btn {
+    text-align: center;
+    margin-top: 8px;
+    padding: 10px 3px;
+    font-weight: 500;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #4C00FE;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #4C00FE;
+    background-color: #FFF2FD;
+}
+
+@media screen and (min-width: 768px) {
+    .info-btn {
+        margin-top: 24px;
+        padding: 10px 15px 10px 16px;
+        border: 1px solid #DC56C5;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .info-btn {
+        margin-top: 8px;
+    }
+}

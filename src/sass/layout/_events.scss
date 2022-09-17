@@ -17,6 +17,11 @@
             grid-template-columns: repeat(4, 289px);
             gap: 40px 32px;
         }
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        column-gap: 32px 20px;
     }
 
     &__poster {
@@ -52,6 +57,11 @@
                 width: 267px;
                 height: 337px;
             }
+        &--img {
+            border-radius: 50px 0px;
+            position: relative;
+            z-index: 1;
+
         }
 
         &--decor {
@@ -60,6 +70,7 @@
             position: absolute;
             top: 0;
             right: 0;
+
             width: 103px;
             height: 95px;
 
@@ -72,6 +83,10 @@
                 width: 227px;
                 height: 212px;
             }
+
+            width: 75%;
+            height: 60%;
+
         }
     }
 
@@ -80,6 +95,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
         text-align: center;
         color: $secondary-text-color;
         gap: 4px;
@@ -101,6 +117,21 @@
                 font-size: 16px;
                 line-height: calc(20 / 16);
             }
+
+        gap: 4px;
+        text-align: center;
+        color: $secondary-text-color;
+
+        &--title {
+            font-size: 14px;
+            line-height: calc(17 / 14);
+            color: $accent-color;
+        }
+
+        &--date {
+            font-size: 14px;
+            line-height: calc(17 / 14);
+
         }
 
         &--place {
@@ -110,16 +141,20 @@
             font-size: 12px;
             line-height: calc(15 / 12);
 
+
             @include mq(tab) {
                 font-size: 14px;
                 line-height: calc(17 / 14);
             }
+
+
         }
 
         &--icon {
             width: 6px;
             height: 9px;
             margin-right: 3px;
+
 
             @include mq(tab) {
                 width: 7.55px;
@@ -128,8 +163,59 @@
 
             @include mq(desk) {
                 width: 7px;
+
+        }
+    }
+}
+
+
+@include mq(tab) {
+    .events {
+        &__cards {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        &__poster {
+            padding-top: 10px;
+            padding-right: 11px;
+        }   
+
+        &__info {
+            gap: 8px;
+
+            &--title,
+            &--date {
+                font-size: 16px;
+                line-height: calc(20 / 16);
+            }
+
+            &--place {
+                font-size: 14px;
+                line-height: calc(17 / 14);
+            }
+
+            &--icon {
+                width: 7.55px;
+
                 height: 10px;
             }
         }
     }
+
+
+}
+
+@include mq(desk) {
+    .events {
+        &__cards {
+            row-gap: 40px;
+        }
+
+        &__poster {
+            padding-top: 19px;
+            padding-right: 21px;
+        }
+    }
+
 }
