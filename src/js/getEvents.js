@@ -4,7 +4,6 @@ import { getEvents } from './modules/getAPI';
 // --------------------------------------------
 
 const refSeachEventsInputs = document.querySelector('.js-search-form');
-console.dir(refSeachEventsInputs);
 const refSearchFormInput = document.querySelector('.js-countries');
 
 refSeachEventsInputs.addEventListener('input', onSeachEventsInput);
