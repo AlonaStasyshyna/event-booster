@@ -15,7 +15,7 @@ refSearchFormInput.insertAdjacentHTML(
 );
 
 getEvents('', 'US').then(data => {
-  const events = data.data?._embedded?.events;
+  const events = data.data._embedded.events;
   events.forEach(e => eventsGallery.innerHTML += createEventCard(e));
 });
 
@@ -23,6 +23,8 @@ let event = '';
 let country = '';
 
 function onSearchEventsInput(e) {
+  eventsGallery.innerHTML = '';
+
   if (e.target.name === 'event') {
     event = e.target.value;
   };
