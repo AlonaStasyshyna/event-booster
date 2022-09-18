@@ -36,8 +36,6 @@ function onSearchEventsInput(e) {
   }
 
   getEvents(event, country).then(data => {
-    console.log(data.data.page.totalElements);
-    console.log(data);
     if (!data.data.page.totalElements) {
       return alert('Oops, there is no events');
     }
