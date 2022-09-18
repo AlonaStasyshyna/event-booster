@@ -1,30 +1,45 @@
 import { COUNTRIES_LIST } from './modules/countriesList';
 import { countriesListMurkup } from './templates/countriesListMurkup';
 import { getEvents } from './modules/getAPI';
+import { createEventCard } from './createEventCard';
 // --------------------------------------------
+<<<<<<< HEAD
 
 const refSeachEventsInputs = document.querySelector('.js-search-form');
+=======
+const eventsGallery = document.querySelector('.events__cards');
+const refSearchEventsInputs = document.querySelector('.js-search-form');
+>>>>>>> main
 const refSearchFormInput = document.querySelector('.js-countries');
 
-refSeachEventsInputs.addEventListener('input', onSeachEventsInput);
+refSearchEventsInputs.addEventListener('input', onSearchEventsInput);
 
 refSearchFormInput.insertAdjacentHTML(
   'beforeend',
   countriesListMurkup(COUNTRIES_LIST)
 );
 
-getEvents();
+getEvents('', 'US').then(data => {
+  const events = data.data._embedded.events;
+  events.forEach(e => eventsGallery.innerHTML += createEventCard(e));
+});
 
 let event = '';
 let country = '';
 
-function onSeachEventsInput(e) {
+function onSearchEventsInput(e) {
+  eventsGallery.innerHTML = '';
+
   if (e.target.name === 'event') {
     event = e.target.value;
-  }
+  };
+
   if (e.target.name === 'country') {
     country = e.target.value;
-  }
+  };
 
-  getEvents(event, country).then(console.log);
-}
+  getEvents(event, country).then(data => {
+    const events = data.data._embedded.events;
+    events.forEach(e => eventsGallery.innerHTML += createEventCard(e));
+  });
+};
