@@ -19,6 +19,7 @@ export async function getEvents(event, country) {
   };
   try {
     const request = await axios(config);
+    console.log('API', request);
     return request;
   } catch (err) {
     console.log;
