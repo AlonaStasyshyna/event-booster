@@ -9,6 +9,11 @@ const refEventsGallery = document.querySelector('.events__cards');
 const refSearchEventsInputs = document.querySelector('.js-search-form');
 const refSearchFormInput = document.querySelector('.js-countries');
 
+let event = '';
+let country = '';
+let currentPage = 1;
+let currentEvents;
+
 refSearchEventsInputs.addEventListener(
   'input',
   debounce(onSearchEventsInput, 1000)
@@ -19,18 +24,15 @@ refSearchFormInput.insertAdjacentHTML(
   countriesListMurkup(COUNTRIES_LIST)
 );
 
-getEvents('', 'US').then(data => {
+getEvents().then(data => {
   const events = data.data._embedded.events;
+  currentEvents = events;
   const totalPagesOfEl = data.data.page.totalPages;
 
   renderPaginationBar(totalPagesOfEl, currentPage);
 
   events.forEach(e => (refEventsGallery.innerHTML += createEventCard(e)));
 });
-
-let event = '';
-let country = '';
-let currentPage = 1;
 
 function onSearchEventsInput(e) {
   if (e.target.name === 'event') {
@@ -43,12 +45,14 @@ function onSearchEventsInput(e) {
 
   getEvents(event, country).then(data => {
     if (!data.data.page.totalElements) {
-      return alert('Oops, there is no events');
+      return refEventsGallery.innerHTML = `<h2 class="events__err">Nothing found :c</h2>`
     }
 
     refEventsGallery.innerHTML = '';
     const events = data.data._embedded.events;
     const totalPagesOfEl = data.data.page.totalPages;
+
+    currentEvents = events;
 
     renderPaginationBar(totalPagesOfEl, currentPage);
 

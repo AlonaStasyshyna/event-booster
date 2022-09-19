@@ -4,9 +4,8 @@ const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events';
 const API_KEY = 'hMlAGZ78fb479kL5D8c5JYufMfeq7H9T';
 
 const pageSize = 20;
-let page = 0;
 
-export async function getEvents(event, country) {
+export async function getEvents(event = '', country = 'US', page = 0) {
   const config = {
     baseURL: BASE_URL,
     params: {
