@@ -4,9 +4,9 @@ const svg = `
     </svg>
 `;
 
-export function createEventCard(event) {
+export function createEventCard(event, i) {
     return `
-        <li class="events__card">
+        <li class="events__card" id="${i}">
             <div class="events__poster">
                 <div class="events__poster--decor"></div>
                 <img src="${event.images.find(e => e.height >= 400 && e.height <= 600).url}" alt="poster" class="events__poster--img">
