@@ -21,10 +21,23 @@
 
     &__card {
         cursor: pointer;
+
         &:hover,
         &:focus {
             .events__poster--decor {
                 border: 2px solid rgba(220, 86, 197, 0.4);
+                height: 151px;
+                width: 120px;
+
+                @include mq(tab) {
+                    width: 141px;
+                    height: 178px;
+                }
+
+                @include mq(desk) {
+                    width: 267px;
+                    height: 337px;
+                }
             }
         }
     }
@@ -72,7 +85,7 @@
             right: 0;
             width: 103px;
             height: 95px;
-            transition: .3 ease-in-out;
+            transition: $transition;
 
             @include mq(tab) {
                 width: 120px;
