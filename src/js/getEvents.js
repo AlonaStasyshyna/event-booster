@@ -12,7 +12,7 @@ const refSearchFormInput = document.querySelector('.js-countries');
 let event = '';
 let country = '';
 let currentPage = 1;
-const events = [];
+export const events = [];
 
 refSearchEventsInputs.addEventListener(
   'input',
