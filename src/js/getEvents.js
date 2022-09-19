@@ -12,7 +12,7 @@ const refSearchFormInput = document.querySelector('.js-countries');
 let event = '';
 let country = '';
 let currentPage = 1;
-let currentEvents;
+const events = [];
 
 refSearchEventsInputs.addEventListener(
   'input',
@@ -25,13 +25,11 @@ refSearchFormInput.insertAdjacentHTML(
 );
 
 getEvents().then(data => {
-  const events = data.data._embedded.events;
-  currentEvents = events;
-  const totalPagesOfEl = data.data.page.totalPages;
-
-  renderPaginationBar(totalPagesOfEl, currentPage);
-
+  events.push(...data.data._embedded.events);
   events.forEach((e, i) => (refEventsGallery.innerHTML += createEventCard(e, i)));
+
+  const totalPagesOfEl = data.data.page.totalPages;
+  renderPaginationBar(totalPagesOfEl, currentPage);
 });
 
 function onSearchEventsInput(e) {
@@ -48,15 +46,16 @@ function onSearchEventsInput(e) {
       return refEventsGallery.innerHTML = `<h2 class="events__err">Nothing found :c</h2>`
     }
 
+    events.length = 0;
     refEventsGallery.innerHTML = '';
-    const events = data.data._embedded.events;
+
+    events.push(...data.data._embedded.events);
+    events.forEach((e, i) => (refEventsGallery.innerHTML += createEventCard(e, i)));
+
     const totalPagesOfEl = data.data.page.totalPages;
-
-    currentEvents = events;
-
     renderPaginationBar(totalPagesOfEl, currentPage);
 
-    events.forEach((e, i) => (refEventsGallery.innerHTML += createEventCard(e, i)));
+    console.log(events)
   });
 }
 
@@ -70,3 +69,8 @@ function onCountryInputClick(e) {
     refSearchFormInput.classList.remove('search-form__input--white');
   }
 }
+
+refEventsGallery.addEventListener('click', (e) => {
+  const target = e.path[2];
+  if (target.tagName === 'LI') console.log(events[target.id]);
+});
