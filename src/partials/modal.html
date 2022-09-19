@@ -1,56 +1,12 @@
-<button info-modal-open>Open Modal Window</button>
 <section class="modal-section backdrop is-hide" info-modal>
-    <div class="modal">
-        <button class="close" info-modal-close><svg width="17" height="17">
-                <use href="./images/sprite.svg#close"></use>
-            </svg></button>
-        <img src="./images/ellipse.jpg" class="elipse-img" alt="img">
-        <div class="info-modal">
-            <img class="modal-img" src="./images/sample-jpg.jpg" alt="img">
-            <ul class="info-list ">
-                <li class="info-list-element">
-                    <h2 class="info-title">INFO</h2>
-                    <p class="info-text">Atlas Weekend is the largest music festival
-                        in Ukraine.More than 200 artists will create
-                        a proper music festival atmosphere on 10 stages</p>
-                </li>
-                <li class="info-list-element">
-                    <h2 class="info-title">WHEN</h2>
-                    <p class="info-text padding">2021-06-09</p>
-                    <p class="info-text">20:00 (Kyiv/Ukraine)</p>
-                </li>
-                <li class="info-list-element">
-                    <h2 class="info-title">WHERE</h2>
-                    <p class="info-text padding">Kyiv, Ukraine</p>
-                    <p class="info-text">VDNH</p>
-                </li>
-                <li class="info-list-element">
-                    <h2 class="info-title">WHO</h2>
-                    <p class="info-text">The Black Eyed Peas</p>
-                </li>
-
-                <li>
-                    <h2 class="info-title tickets">PRICES</h2>
-                    <div class="scan">
-                        <svg class="bar-code" width="24" height="16">
-                            <use href="./images/sprite.svg#bar_code"></use>
-                        </svg>
-                        <p class="info-text">Standart 300-500 UAH</p>
-                    </div>
-                    <button class="buy-tickets-btn">BUY TICKETS</button>
-                </li>
-                <li>
-                    <div class="scan">
-                        <svg class="bar-code" width="24" height="16">
-                            <use href="./images/sprite.svg#bar_code"></use>
-                        </svg>
-                        <p class="info-text">VIP 1000-1500 UAH</p>
-                    </div>
-                    <button class="buy-tickets-btn">BUY TICKETS</button>
-                </li>
-
-            </ul>
+    <div class="modal-container">
+        <div class="modal">
+            <button class="close" info-modal-close>
+                <svg width="17" height="17">
+                    <use href="./images/sprite.svg#close"></use>
+                </svg>
+            </button>
+            <div class="modal-content"></div>
         </div>
-        <button class="info-btn">MORE FROM THIS AUTHOR</button>
     </div>
 </section>
