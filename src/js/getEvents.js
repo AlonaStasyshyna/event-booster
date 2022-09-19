@@ -54,8 +54,6 @@ function onSearchEventsInput(e) {
 
     const totalPagesOfEl = data.data.page.totalPages;
     renderPaginationBar(totalPagesOfEl, currentPage);
-
-    console.log(events)
   });
 }
 
