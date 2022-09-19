@@ -1,15 +1,23 @@
-.search-form__container {
+.search-form {
   margin-bottom: 56px;
 
   @include mq(tab) {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 80px;
   }
 
   @include mq(desk) {
-    justify-content: center;
     margin-bottom: 120px;
+  }
+}
+
+.search-form__container {
+  @include mq(tab) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include mq(desk) {
+    justify-content: center;
   }
 }
 

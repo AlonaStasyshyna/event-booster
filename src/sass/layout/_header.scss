@@ -17,15 +17,10 @@
   height: 213.97px;
 
   background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)
-    ),
-    linear-gradient(
-      136.07deg,
-      rgba(196, 196, 196, 0.03) 10.75%,
-      rgba(196, 196, 196, 0) 92.33%
-    );
+    136.07deg,
+    rgba(196, 196, 196, 0.03) 10.75%,
+    rgba(196, 196, 196, 0) 92.33%
+  );
   backdrop-filter: blur(15px);
   border-radius: 50%;
 
@@ -36,16 +31,6 @@
     top: -151px;
   }
   @media screen and (min-width: 1280px) {
-    background-image: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4)
-      ),
-      linear-gradient(
-        136.07deg,
-        rgba(196, 196, 196, 0.03) 10.75%,
-        rgba(196, 196, 196, 0) 92.33%
-      );
     width: 458px;
     height: 386px;
     left: -229px;
