@@ -1,5 +1,4 @@
 export function createEventCard(event) {
-    console.log(event.images)
     return `
         <li class="events__card">
             <div class="events__poster">
