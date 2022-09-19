@@ -1,11 +1,9 @@
 export function createEventCard(event) {
-  return `
+    return `
         <li class="events__card">
             <div class="events__poster">
                 <div class="events__poster--decor"></div>
-                <img src="${
-                  event.images[0].url
-                }" alt="poster" class="events__poster--img">
+                <img src="${event.images.find(e => e.height >= 600).url}" alt="poster" class="events__poster--img">
             </div>
             <div class="events__info">
                 <h2 class="events__info--title">${event.name}</h2>
@@ -14,13 +12,9 @@ export function createEventCard(event) {
                     <svg class="events__info--icon">
                         <use xlink:href="sprite.svg#location"></use>
                     </svg>
-                    ${
-                      event.dates.timezone
-                        ? event.dates.timezone
-                        : 'Secret Place'
-                    }
+                    ${event.dates.timezone ? event.dates.timezone : 'Secret Place'}
                 </p>
             </div>
         </li>
     `;
-}
+};
