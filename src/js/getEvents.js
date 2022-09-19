@@ -31,7 +31,7 @@ getEvents().then(data => {
 
   renderPaginationBar(totalPagesOfEl, currentPage);
 
-  events.forEach(e => (refEventsGallery.innerHTML += createEventCard(e)));
+  events.forEach((e, i) => (refEventsGallery.innerHTML += createEventCard(e, i)));
 });
 
 function onSearchEventsInput(e) {
@@ -56,7 +56,7 @@ function onSearchEventsInput(e) {
 
     renderPaginationBar(totalPagesOfEl, currentPage);
 
-    events.forEach(e => (refEventsGallery.innerHTML += createEventCard(e)));
+    events.forEach((e, i) => (refEventsGallery.innerHTML += createEventCard(e, i)));
   });
 }
 
