@@ -24,9 +24,7 @@ const markup = {
 let currentPage = 1;
 const listOfEl = document.querySelector('.events__cards');
 const searchInputEl = document.querySelector('.search-form__input');
-console.log(searchInputEl);
 const searchCountryEl = document.querySelector('.js-countries');
-console.log(searchCountryEl);
 
 paginationBarRef.addEventListener('click', onPaginationBarClick);
 
