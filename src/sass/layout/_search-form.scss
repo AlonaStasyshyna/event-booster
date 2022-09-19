@@ -51,7 +51,7 @@
   width: 100%;
   height: 40px;
 
-  color: inherit;
+  color: white;
   line-height: 1.25;
   font-weight: 400;
 
@@ -71,6 +71,14 @@
   &:focus {
     border: 3px solid $accent-color;
   }
+}
+
+.search-form__input.js-countries {
+  color: $primary-text-color;
+}
+
+.search-form__input.js-countries.search-form__input--white {
+  color: $secondary-text-color;
 }
 
 .search-form__icon {

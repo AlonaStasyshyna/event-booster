@@ -45,3 +45,14 @@ function onSearchEventsInput(e) {
     events.forEach(e => (refEventsGallery.innerHTML += createEventCard(e)));
   });
 }
+
+// -----------------Color control on SearchFormInput--------------
+refSearchFormInput.addEventListener('click', onCountryInputClick);
+function onCountryInputClick(e) {
+  if (e.target.value) {
+    refSearchFormInput.classList.add('search-form__input--white');
+  }
+  if (!e.target.value) {
+    refSearchFormInput.classList.remove('search-form__input--white');
+  }
+}
