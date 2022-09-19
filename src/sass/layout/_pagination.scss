@@ -1,5 +1,8 @@
 .pagination__wripper {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .pagination__button {
@@ -7,8 +10,16 @@
   height: 30px;
   color: $secondary-text-color;
   background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  cursor: pointer;
   border: none;
+
+  & span {
+    pointer-events: none;
+  }
 
   @include mq(mob-only) {
     font-size: 14px;
@@ -19,4 +30,8 @@
 .pagination__button--active {
   border: 1px solid #dc56c5;
   border-radius: 10px 0px;
+}
+
+.pagination__button_dots {
+  align-items: none;
 }

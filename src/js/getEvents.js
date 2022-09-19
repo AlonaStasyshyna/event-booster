@@ -2,6 +2,7 @@ import { COUNTRIES_LIST } from './modules/countriesList';
 import { countriesListMurkup } from './templates/countriesListMurkup';
 import { createEventCard } from './templates/createEventCard';
 import { getEvents } from './modules/getAPI';
+import { renderPaginationBar } from './templates/pagination';
 import debounce from 'lodash.debounce';
 // --------------------------------------------
 const refEventsGallery = document.querySelector('.events__cards');
@@ -20,11 +21,16 @@ refSearchFormInput.insertAdjacentHTML(
 
 getEvents('', 'US').then(data => {
   const events = data.data._embedded.events;
+  const totalPagesOfEl = data.data.page.totalPages;
+
+  renderPaginationBar(totalPagesOfEl, currentPage);
+
   events.forEach(e => (refEventsGallery.innerHTML += createEventCard(e)));
 });
 
 let event = '';
 let country = '';
+let currentPage = 1;
 
 function onSearchEventsInput(e) {
   if (e.target.name === 'event') {
@@ -42,6 +48,10 @@ function onSearchEventsInput(e) {
 
     refEventsGallery.innerHTML = '';
     const events = data.data._embedded.events;
+    const totalPagesOfEl = data.data.page.totalPages;
+
+    renderPaginationBar(totalPagesOfEl, currentPage);
+
     events.forEach(e => (refEventsGallery.innerHTML += createEventCard(e)));
   });
 }
