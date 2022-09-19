@@ -1,40 +1,57 @@
 import { COUNTRIES_LIST } from './modules/countriesList';
-import { countriesListMarkup } from './templates/countriesListMarkup';
+import { countriesListMurkup } from './templates/countriesListMurkup';
+import { createEventCard } from './templates/createEventCard';
 import { getEvents } from './modules/getAPI';
-import { createEventCard } from './createEventCard';
-
+import { renderPaginationBar } from './templates/pagination';
+import debounce from 'lodash.debounce';
+// --------------------------------------------
 const refEventsGallery = document.querySelector('.events__cards');
 const refSearchEventsInputs = document.querySelector('.js-search-form');
 const refSearchFormInput = document.querySelector('.js-countries');
 
-let event = '';
-let country = '';
-
-function onSearchEventsInput(e) {
-  refEventsGallery.innerHTML = '';
-
-  if (e.target.name === 'event') {
-    event = e.target.value;
-  };
-
-  if (e.target.name === 'country') {
-    country = e.target.value;
-  };
-
-  getEvents(event, country).then(data => {
-    const events = data.data._embedded.events;
-    events.forEach(e => refEventsGallery.innerHTML += createEventCard(e));
-  });
-};
-
-getEvents('', 'US').then(data => {
-  const events = data.data._embedded.events;
-  events.forEach(e => refEventsGallery.innerHTML += createEventCard(e));
-});
-
-refSearchEventsInputs.addEventListener('input', onSearchEventsInput);
+refSearchEventsInputs.addEventListener(
+  'input',
+  debounce(onSearchEventsInput, 1000)
+);
 
 refSearchFormInput.insertAdjacentHTML(
   'beforeend',
-  countriesListMarkup(COUNTRIES_LIST)
+  countriesListMurkup(COUNTRIES_LIST)
 );
+
+getEvents('', 'US').then(data => {
+  const events = data.data._embedded.events;
+  const totalPagesOfEl = data.data.page.totalPages;
+
+  renderPaginationBar(totalPagesOfEl, currentPage);
+
+  events.forEach(e => (refEventsGallery.innerHTML += createEventCard(e)));
+});
+
+let event = '';
+let country = '';
+let currentPage = 1;
+
+function onSearchEventsInput(e) {
+  if (e.target.name === 'event') {
+    event = e.target.value;
+  }
+
+  if (e.target.name === 'country') {
+    country = e.target.value;
+  }
+
+  getEvents(event, country).then(data => {
+    if (!data.data.page.totalElements) {
+      return alert('Oops, there is no events');
+    }
+
+    refEventsGallery.innerHTML = '';
+    const events = data.data._embedded.events;
+    const totalPagesOfEl = data.data.page.totalPages;
+
+    renderPaginationBar(totalPagesOfEl, currentPage);
+
+    events.forEach(e => (refEventsGallery.innerHTML += createEventCard(e)));
+  });
+}
