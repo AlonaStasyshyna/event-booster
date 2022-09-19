@@ -44,7 +44,7 @@
     background-color: #FFF2FD;
     margin-left: 20px;
     margin-right: 20px;
-
+    margin-top: 240px;
 }
 .modal-modal {
     display: flex;
@@ -130,12 +130,12 @@
 }
 
 .info-list-element {
-    padding-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 @media screen and (min-width: 1280px) {
     .info-list-element {
-        padding-bottom: 20px;
+        margin-bottom: 20px;
     }
 }
 
@@ -161,13 +161,13 @@
 .info-title {
     font-size: 20px;
     color: $accent-color;
-    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 @media screen and (min-width: 1280px) {
     .info-title {
         font-size: 24px;
-        padding-bottom: 7px;
+        margin-bottom: 7px;
     }
 }
 
@@ -183,22 +183,22 @@
 }
 
 .padding {
-    padding-bottom: 3px;
+    margin-bottom: 3px;
 }
 
 @media screen and (min-width: 1280px) {
     .padding {
-        padding-bottom: 5px;
+        margin-bottom: 5px;
     }
 }
 
 .tickets {
-    padding-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 @media screen and (min-width: 768px) {
     .tickets {
-        padding-bottom: 5px;
+        margin-bottom: 5px;
     }
 }
 
