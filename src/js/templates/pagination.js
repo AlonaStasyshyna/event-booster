@@ -33,7 +33,7 @@ async function onPaginationBarClick(event) {
   currentPage = event.target.dataset.page;
   listOfEl.innerHTML = '';
 
-  const result = await getEvents(searchInputEl.value, searchCountryEl.value);
+  const result = await getEvents(searchInputEl.value, searchCountryEl.value, currentPage);
   const events = result.data._embedded.events;
   const totalPages = result.data.page.totalPages;
 
@@ -66,13 +66,11 @@ export function renderPaginationBar(totalPages, cPage) {
     if (i === 0) {
       i += 1;
     }
-    //Insane hardcoding
     if (i === 1) {
       if (cPage === 3) {
-        i++;
+        i += 1;
       }
     }
-    //Insane hardcoding
     if (i === totalPages) {
       if (cPage === totalPages - 2) {
         continue;
