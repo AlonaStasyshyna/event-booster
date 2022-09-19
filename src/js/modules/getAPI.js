@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { loaderOn, loaderOff } from './loader';
 // ----------------------------------------
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events';
 const API_KEY = 'hMlAGZ78fb479kL5D8c5JYufMfeq7H9T';
@@ -17,9 +18,12 @@ export async function getEvents(event = '', country = 'US', page = 0) {
     },
   };
   try {
+    loaderOn();
     const request = await axios(config);
     return request;
   } catch (err) {
     console.log;
+  } finally {
+    loaderOff();
   }
 }
