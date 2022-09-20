@@ -44,9 +44,15 @@ function onSearchEventsInput(e) {
   getEvents(event, country).then(data => {
     const totalPagesOfEl = data.data.page.totalPages;
     renderPaginationBar(totalPagesOfEl, currentPage);
-    
+
+    document.querySelector('.events__err').style.display = "none";
+    document.querySelector('.pagination__wripper').style.display = "flex";
+
     if (!data.data.page.totalElements) {
-      return refEventsGallery.innerHTML = `<h2 class="events__err">Nothing found :c</h2>`
+      refEventsGallery.innerHTML = '';
+      document.querySelector('.events__err').style.display = "block";
+      document.querySelector('.pagination__wripper').style.display = "none";
+      return;
     }
 
     events.length = 0;
