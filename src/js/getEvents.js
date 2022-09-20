@@ -42,6 +42,9 @@ function onSearchEventsInput(e) {
   }
 
   getEvents(event, country).then(data => {
+    const totalPagesOfEl = data.data.page.totalPages;
+    renderPaginationBar(totalPagesOfEl, currentPage);
+    
     if (!data.data.page.totalElements) {
       return refEventsGallery.innerHTML = `<h2 class="events__err">Nothing found :c</h2>`
     }
@@ -51,9 +54,6 @@ function onSearchEventsInput(e) {
 
     events.push(...data.data._embedded.events);
     events.forEach((e, i) => (refEventsGallery.innerHTML += createEventCard(e, i)));
-
-    const totalPagesOfEl = data.data.page.totalPages;
-    renderPaginationBar(totalPagesOfEl, currentPage);
   });
 }
 
