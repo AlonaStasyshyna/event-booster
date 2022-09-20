@@ -46,21 +46,10 @@ refs.modalContainer.addEventListener('click', e => {
 function generatePriceOfModalContent(event) {
   const arrOfPrices = event?.priceRanges;
 
-  if (!arrOfPrices.length) {
-    return (typeOfTickets = `
-                <div class="scan">
-                    <svg class="bar-code" width="24" height="16">
-                        <use href="./images/sprite.svg#bar_code"></use>
-                    </svg>
-                    <p class="info-text">- no price to show</p>
-                </div>
-                <button class="buy-tickets-btn" disabled>BUY TICKETS</button>
-            `);
-  }
-
-  return (typeOfTickets = arrOfPrices
-    .map(oneType => {
-      return `
+  if (arrOfPrices) {
+    return (typeOfTickets = arrOfPrices
+      .map(oneType => {
+        return `
                 <div class="scan">
                     ${barcode}
                     <p class="info-text">${toUpperCaseFirstLetter(
@@ -74,8 +63,17 @@ function generatePriceOfModalContent(event) {
                 href="${event?.url}"
                 target="_blank">BUY TICKETS</a>
             `;
-    })
-    .join(''));
+      })
+      .join(''));
+  }
+
+  return (typeOfTickets = `
+                <div class="scan">
+                    ${barcode}
+                    <p class="info-text">No price to show</p>
+                </div>
+                <button class="buy-tickets-btn--disabled">BUY TICKETS</button>
+            `);
 }
 
 function generateModalContent(event) {

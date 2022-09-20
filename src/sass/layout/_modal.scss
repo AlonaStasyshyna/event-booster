@@ -227,7 +227,6 @@
   background-color: #4c00fe;
   border-radius: 5px;
   border-style: none;
-  cursor: pointer;
   transition: background-color 250ms ease-in-out;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -243,6 +242,25 @@
 
 @media screen and (min-width: 1280px) {
   .buy-tickets-btn {
+    margin-top: 20px;
+    margin-bottom: 32px;
+  }
+}
+
+.buy-tickets-btn--disabled {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 9px 19px 11px 19px;
+  font-weight: 500;
+  font-size: 16px;
+  color: $secondary-text-color;
+  background-color: #dbdada;
+  border-radius: 5px;
+  border-style: none;
+}
+
+@media screen and (min-width: 1280px) {
+  .buy-tickets-btn--disabled {
     margin-top: 20px;
     margin-bottom: 32px;
   }
