@@ -26,7 +26,9 @@ refSearchFormInput.insertAdjacentHTML(
 
 getEvents().then(data => {
   events.push(...data.data._embedded.events);
-  events.forEach((e, i) => (refEventsGallery.innerHTML += createEventCard(e, i)));
+  events.forEach(
+    (e, i) => (refEventsGallery.innerHTML += createEventCard(e, i))
+  );
 
   const totalPagesOfEl = data.data.page.totalPages;
   renderPaginationBar(totalPagesOfEl, currentPage);
@@ -45,13 +47,13 @@ function onSearchEventsInput(e) {
     const totalPagesOfEl = data.data.page.totalPages;
     renderPaginationBar(totalPagesOfEl, currentPage);
 
-    document.querySelector('.events__err').style.display = "none";
-    document.querySelector('.pagination__wripper').style.display = "flex";
+    document.querySelector('.events__err').style.display = 'none';
+    document.querySelector('.pagination__wripper').style.display = 'flex';
 
     if (!data.data.page.totalElements) {
       refEventsGallery.innerHTML = '';
-      document.querySelector('.events__err').style.display = "block";
-      document.querySelector('.pagination__wripper').style.display = "none";
+      document.querySelector('.events__err').style.display = 'block';
+      document.querySelector('.pagination__wripper').style.display = 'none';
       return;
     }
 
@@ -59,7 +61,9 @@ function onSearchEventsInput(e) {
     refEventsGallery.innerHTML = '';
 
     events.push(...data.data._embedded.events);
-    events.forEach((e, i) => (refEventsGallery.innerHTML += createEventCard(e, i)));
+    events.forEach(
+      (e, i) => (refEventsGallery.innerHTML += createEventCard(e, i))
+    );
   });
 }
 
@@ -68,8 +72,7 @@ refSearchFormInput.addEventListener('click', onCountryInputClick);
 function onCountryInputClick(e) {
   if (e.target.value) {
     refSearchFormInput.classList.add('search-form__input--white');
-  }
-  if (!e.target.value) {
+  } else {
     refSearchFormInput.classList.remove('search-form__input--white');
   }
 }
