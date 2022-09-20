@@ -50,7 +50,7 @@ export function renderPaginationBar(totalPages, cPage) {
   let pageBefore = cPage - 2;
   let pageAfter = cPage + 2;
 
-  if (totalPages >= 500) totalPages = 500;
+  if (totalPages >= 50) totalPages = 50;
 
   //Отрисовка числа 1 и ... после неё, если надо
   if (cPage > 2) {
