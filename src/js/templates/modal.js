@@ -1,16 +1,5 @@
 import { events } from '../getEvents';
-
-const barcode = `
-  <svg class="bar-code" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" id="bar_code">
-    <path d="M3.22222 0.833496L0 0.833496L0 20.1668H3.22222L3.22222 0.833496Z" fill="#0E0E0E"></path>
-    <path d="M11.3266 0.833496L8.10439 0.833496L8.10439 20.1668H11.3266L11.3266 0.833496Z" fill="#0E0E0E"></path>
-    <path d="M16.2088 0.833496L12.9866 0.833496L12.9866 20.1668H16.2088L16.2088 0.833496Z" fill="#0E0E0E"></path>
-    <path d="M28.9999 0.833496L24.2154 0.833496L24.2154 20.1668H28.9999L28.9999 0.833496Z" fill="#0E0E0E"></path>
-    <path d="M6.44449 0.833496L4.88219 0.833496L4.88219 20.1668H6.44449L6.44449 0.833496Z" fill="#0E0E0E"></path>
-    <path d="M19.3333 0.833496L17.771 0.833496L17.771 20.1668H19.3333L19.3333 0.833496Z" fill="#0E0E0E"></path>
-    <path d="M22.5555 0.833496L20.9932 0.833496L20.9932 20.1668H22.5555L22.5555 0.833496Z" fill="#0E0E0E"></path>
-  </svg>
-`;
+import sprite from '../../images/sprite.svg';
 
 const refs = {
   openModalBtn: document.querySelector('[info-modal-open]'),
@@ -51,7 +40,7 @@ function generatePriceOfModalContent(event) {
       .map(oneType => {
         return `
                 <div class="scan">
-                    ${barcode}
+                    <svg class="bar-code"><use href='${sprite}#bar_code'></use></svg>
                     <p class="info-text">${toUpperCaseFirstLetter(
                       oneType?.type
                     )}:
@@ -69,7 +58,7 @@ function generatePriceOfModalContent(event) {
 
   return (typeOfTickets = `
                 <div class="scan">
-                    ${barcode}
+                    <svg class="bar-code"><use href='${sprite}#bar_code'></use></svg>
                     <p class="info-text">No price to show</p>
                 </div>
                 <button class="buy-tickets-btn--disabled">BUY TICKETS</button>

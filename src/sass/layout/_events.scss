@@ -152,8 +152,7 @@
             }
         }
 
-        &--place {
-            align-items: center;
+        &--place {  
             font-weight: 600;
             font-size: 12px;
             line-height: calc(15 / 12);
@@ -166,9 +165,11 @@
 
         &--icon {
             height: 9px;
+            width: 6px;
 
             @include mq(tab) {
                 height: 10px;
+                width: 7.55px;
             }
         }
     }
