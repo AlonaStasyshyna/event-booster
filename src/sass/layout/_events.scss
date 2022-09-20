@@ -3,7 +3,21 @@
     place-items: center;
     margin-bottom: 60px;
 
+    &__err {
+        display: none;
+        position: absolute;
+        top: 320px;
+        left: 50%;
+        translate: -50%;
+        width: 260px;
+        @include mq(desk) {
+            top: 400px;
+            width: 280px;
+        }
+    }
+
     &__cards {
+        min-height: 21vh;
         display: grid;
         grid-template-columns: repeat(2, 130px);
         gap: 32px 20px;
@@ -11,6 +25,10 @@
         @include mq(tab) {
             grid-template-columns: repeat(4, 152px);
             gap: 32px;
+        }
+
+        @include mq(tab-only) {
+            min-height: 32vh;
         }
 
         @include mq(desk) {
@@ -24,19 +42,25 @@
 
         &:hover,
         &:focus {
-            .events__poster--decor {
-                border: 2px solid rgba(220, 86, 197, 0.4);
-                height: 151px;
-                width: 120px;
+            .events__poster {
+                &--decor {
+                    border: 2px solid rgba(220, 86, 197, 0.4);
+                    height: 151px;
+                    width: 120px;
 
-                @include mq(tab) {
-                    width: 141px;
-                    height: 178px;
+                    @include mq(tab) {
+                        width: 141px;
+                        height: 178px;
+                    }
+
+                    @include mq(desk) {
+                        width: 267px;
+                        height: 337px;
+                    }
                 }
 
-                @include mq(desk) {
-                    width: 267px;
-                    height: 337px;
+                &--img {
+                    scale: 1.02;
                 }
             }
         }
@@ -65,6 +89,7 @@
             border-radius: 50px 0px;
             height: 151px;
             width: 120px;
+            transition: $transition;
 
             @include mq(tab) {
                 width: 141px;
