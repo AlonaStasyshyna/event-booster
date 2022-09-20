@@ -25,7 +25,6 @@ let typeOfTickets = '';
 refs.events.addEventListener('click', e => {
   const target = e.path[2];
   if (target.tagName === 'LI') {
-    console.log(events[target.id]);
     generatePriceOfModalContent(events[target.id]);
     generateModalContent(events[target.id]);
     toggleModal();
