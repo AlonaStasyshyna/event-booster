@@ -2,7 +2,7 @@ const openModalBtn = document.querySelector('[data-modal-open]');
 const closeModalBtn = document.querySelector('[data-modal-close]');
 const modal = document.querySelector('[data-modal]');
 const body = document.querySelector('[data-body]');
-const modalDev = document.querySelector('[data-modal]');
+const modalDev = document.querySelector('[data-modal-dev]');
 
 openModalBtn.addEventListener('click', toggleModal);
 closeModalBtn.addEventListener('click', toggleModal);
@@ -27,7 +27,7 @@ export function closeByKeybord(value) {
 }
 
 modalDev.addEventListener('click', e => {
-  if (!e.target.closest('modal-dev__content')) {
+  if (!e.target.closest('.modal-dev__content')) {
     toggleModal();
   }
 });
