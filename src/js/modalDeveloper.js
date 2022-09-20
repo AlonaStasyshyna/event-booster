@@ -25,3 +25,9 @@ export function closeByKeybord(value) {
     { once: true }
   );
 }
+
+modalDev.addEventListener('click', e => {
+  if (!e.target.closest('modal-dev__content')) {
+    toggleModal();
+  }
+});
