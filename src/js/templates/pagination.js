@@ -1,5 +1,6 @@
 import { getEvents } from '../modules/getAPI';
 import { createEventCard } from './createEventCard';
+import { events } from '../getEvents';
 
 const paginationBarRef = document.querySelector('.pagination__wripper');
 
@@ -31,13 +32,16 @@ paginationBarRef.addEventListener('click', onPaginationBarClick);
 async function onPaginationBarClick(event) {
   if (event.target.dataset.type !== 'number') return;
   currentPage = event.target.dataset.page;
+
+  events.length = 0;
   listOfEl.innerHTML = '';
 
-  const result = await getEvents(searchInputEl.value, searchCountryEl.value, currentPage);
-  const events = result.data._embedded.events;
-  const totalPages = result.data.page.totalPages;
+  const result = await getEvents(searchInputEl.value, searchCountryEl.value, currentPage - 1);
 
-  events.forEach(e => (listOfEl.innerHTML += createEventCard(e)));
+  events.push(...result.data._embedded.events);
+  events.forEach((e, i) => (listOfEl.innerHTML += createEventCard(e, i)));
+
+  const totalPages = result.data.page.totalPages;
   renderPaginationBar(totalPages, Number(currentPage));
 }
 
