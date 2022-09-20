@@ -1,12 +1,14 @@
 .pagination {
-  margin-bottom: 60px;
+  margin-bottom: 55px;
 }
 
 .pagination__wripper {
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
+  height: 35px;
 }
 
 .pagination__button {
@@ -20,6 +22,12 @@
 
   cursor: pointer;
   border: none;
+  transition: color ($transition), transform ($transition);
+
+  &:hover {
+    transform: scale(1.15);
+    color: $accent-color;
+  }
 
   & span {
     pointer-events: none;
@@ -34,6 +42,9 @@
 .pagination__button--active {
   border: 1px solid #dc56c5;
   border-radius: 10px 0px;
+  &:hover {
+    transform: scale(1.15);
+  }
 }
 
 .pagination__button_dots {
