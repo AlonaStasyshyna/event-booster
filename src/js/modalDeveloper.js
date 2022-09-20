@@ -14,16 +14,13 @@ export function toggleModal() {
 }
 
 export function closeByKeybord(value) {
-  document.addEventListener(
-    'keydown',
-    e => {
-      if (e.code == 'Escape') {
-        value.classList.add('is-hidden');
-        body.classList.remove('no-scroll');
-      }
-    },
-    { once: true }
-  );
+  document.addEventListener('keydown', e => {
+    if (e.code === 'Escape') {
+      value.classList.add('is-hidden');
+      body.classList.remove('no-scroll');
+      document.removeEventListener('keydown', closeByKeybord);
+    }
+  });
 }
 
 modalDev.addEventListener('click', e => {
