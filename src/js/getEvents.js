@@ -67,8 +67,3 @@ function onCountryInputClick(e) {
     refSearchFormInput.classList.remove('search-form__input--white');
   }
 }
-
-refEventsGallery.addEventListener('click', (e) => {
-  const target = e.path[2];
-  if (target.tagName === 'LI') console.log(events[target.id]);
-});
