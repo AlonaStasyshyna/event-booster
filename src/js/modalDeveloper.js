@@ -7,20 +7,13 @@ const modalDev = document.querySelector('[data-modal]');
 openModalBtn.addEventListener('click', toggleModal);
 closeModalBtn.addEventListener('click', toggleModal);
 
-// modalDev.addEventListener('click', e => {
-//   if (!e.composedPath().includes(developers)) {
-//     modal.classList.toggle('is-hidden');
-//     body.classList.toggle('no-scroll');
-//   }
-// });
-
-function toggleModal() {
+export function toggleModal() {
   modal.classList.toggle('is-hidden');
   body.classList.toggle('no-scroll');
   closeByKeybord(modal);
 }
 
-function closeByKeybord(value) {
+export function closeByKeybord(value) {
   document.addEventListener(
     'keydown',
     e => {
