@@ -3,7 +3,21 @@
     place-items: center;
     margin-bottom: 60px;
 
+    &__err {
+        display: none;
+        position: absolute;
+        top: 320px;
+        left: 50%;
+        translate: -50%;
+        width: 260px;
+        @include mq(desk) {
+            top: 400px;
+            width: 280px;
+        }
+    }
+
     &__cards {
+        min-height: 21vh;
         display: grid;
         grid-template-columns: repeat(2, 130px);
         gap: 32px 20px;
