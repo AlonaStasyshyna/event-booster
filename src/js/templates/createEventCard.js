@@ -16,7 +16,7 @@ export function createEventCard(event, i) {
                 <p class="events__info--date">${event.dates.start.localDate}</p>
                 <p class="events__info--place">
                     ${svg}
-                    ${event._embedded.venues[0].address.line1 ? event._embedded.venues[0].address.line1 : 'Secret Place'}
+                    ${event?._embedded?.venues[0]?.address?.line1 ? event._embedded.venues[0].address.line1 : 'Secret Place'}
                 </p>
             </div>
         </li>

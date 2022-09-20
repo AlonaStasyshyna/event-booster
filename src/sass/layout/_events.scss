@@ -27,6 +27,10 @@
             gap: 32px;
         }
 
+        @include mq(tab-only) {
+            min-height: 32vh;
+        }
+
         @include mq(desk) {
             grid-template-columns: repeat(4, 289px);
             gap: 40px 32px;
