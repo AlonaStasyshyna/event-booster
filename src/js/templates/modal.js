@@ -38,6 +38,23 @@ function generatePriceOfModalContent(event) {
   if (arrOfPrices) {
     return (typeOfTickets = arrOfPrices
       .map(oneType => {
+        if (Number(oneType?.min) === Number(oneType?.max)) {
+          return `
+                <div class="scan">
+                    <svg class="bar-code"><use href='${sprite}#bar_code'></use></svg>
+                    <p class="info-text">${toUpperCaseFirstLetter(
+                      oneType?.type
+                    )}:
+                    ${oneType?.min}
+                    ${oneType?.currency}
+                    </p>
+                </div>
+                <a class="buy-tickets-btn buy-tickets-link"
+                href="${event?.url}"
+                target="_blank">BUY TICKETS</a>
+            `;
+        }
+
         return `
                 <div class="scan">
                     <svg class="bar-code"><use href='${sprite}#bar_code'></use></svg>
