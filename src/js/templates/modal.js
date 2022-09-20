@@ -69,11 +69,11 @@ function generateModalContent(event) {
   refs.modalContent.innerHTML = `
    <div class="modal-modal">
     <img src="${
-      event.images.find(e => e.height >= 400 && e.height <= 600).url
+      event.images.find(e => e.height >= 400 && e.height <= 600 && e.ratio === '3_2').url
     }" class="elipse-img" alt="img">
     <div class="info-modal">
         <img class="modal-img" src="${
-          event.images.find(e => e.height >= 400 && e.height <= 600).url
+          event.images.find(e => e.height >= 400 && e.height <= 600 && e.ratio === '3_2').url
         }" alt="img">
         <ul class="info-list ">
             <li class="info-list-element">
