@@ -3,6 +3,11 @@ import { createEventCard } from './createEventCard';
 import { events } from '../getEvents';
 
 const paginationBarRef = document.querySelector('.pagination__wripper');
+const listOfEl = document.querySelector('.events__cards');
+const searchInputEl = document.querySelector('.search-form__input');
+const searchCountryEl = document.querySelector('.js-countries');
+
+let currentPage = 1;
 
 const markup = {
   number(n, isActive = false) {
@@ -22,10 +27,6 @@ const markup = {
     </li>`;
   },
 };
-let currentPage = 1;
-const listOfEl = document.querySelector('.events__cards');
-const searchInputEl = document.querySelector('.search-form__input');
-const searchCountryEl = document.querySelector('.js-countries');
 
 paginationBarRef.addEventListener('click', onPaginationBarClick);
 
@@ -36,7 +37,11 @@ async function onPaginationBarClick(event) {
   events.length = 0;
   listOfEl.innerHTML = '';
 
-  const result = await getEvents(searchInputEl.value, searchCountryEl.value, currentPage - 1);
+  const result = await getEvents(
+    searchInputEl.value,
+    searchCountryEl.value,
+    currentPage - 1
+  );
 
   events.push(...result.data._embedded.events);
   events.forEach((e, i) => (listOfEl.innerHTML += createEventCard(e, i)));

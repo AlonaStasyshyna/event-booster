@@ -9,6 +9,7 @@ const refs = {
   modalContent: document.querySelector('.modal-content'),
   modalContainer: document.querySelector('.modal-container'),
 };
+
 let typeOfTickets = '';
 
 refs.events.addEventListener('click', e => {
@@ -24,6 +25,7 @@ refs.closeModalBtn.addEventListener('click', toggleModal);
 
 function toggleModal() {
   refs.modal.classList.toggle('is-hide');
+  closeByKeybord(refs.modal);
 }
 
 refs.modalContainer.addEventListener('click', e => {
@@ -32,12 +34,38 @@ refs.modalContainer.addEventListener('click', e => {
   }
 });
 
+export function closeByKeybord(value) {
+  document.addEventListener('keydown', e => {
+    if (e.code === 'Escape') {
+      value.classList.add('is-hide');
+      document.removeEventListener('keydown', closeByKeybord);
+    }
+  });
+}
+
 function generatePriceOfModalContent(event) {
   const arrOfPrices = event?.priceRanges;
 
   if (arrOfPrices) {
     return (typeOfTickets = arrOfPrices
       .map(oneType => {
+        if (Number(oneType?.min) === Number(oneType?.max)) {
+          return `
+                <div class="scan">
+                    <svg class="bar-code"><use href='${sprite}#bar_code'></use></svg>
+                    <p class="info-text">${toUpperCaseFirstLetter(
+                      oneType?.type
+                    )}:
+                    ${oneType?.min}
+                    ${oneType?.currency}
+                    </p>
+                </div>
+                <a class="buy-tickets-btn buy-tickets-link"
+                href="${event?.url}"
+                target="_blank">BUY TICKETS</a>
+            `;
+        }
+
         return `
                 <div class="scan">
                     <svg class="bar-code"><use href='${sprite}#bar_code'></use></svg>
@@ -93,7 +121,7 @@ function generateModalContent(event) {
                   event?.dates?.start?.localTime
                     ? event.dates.start.localTime
                     : 'Secret Time'
-                } 
+                }
                 (${
                   event?.dates?.timezone ? event.dates.timezone : 'Secret Place'
                 })</p>
